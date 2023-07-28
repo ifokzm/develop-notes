@@ -8,9 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>develop-notes-service</artifactId>
-    <name>develop-notes-service</name>
-    <description>service 模块，对应 MVC 的 M 概念，存放核心业务逻辑代码</description>
+
+    <artifactId>develop-notes-repostitory</artifactId>
+    <name>develop-notes-repostitory</name>
+    <description>repostitory 模块，存放核心业务逻辑代码</description>
     <dependencies>
 
     </dependencies>
