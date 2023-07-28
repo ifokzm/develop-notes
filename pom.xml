@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
+    <groupId>com.github.sailboat</groupId>
     <artifactId>develop-notes</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -21,6 +21,7 @@
         <module>develop-notes-web</module>
         <module>develop-notes-service</module>
         <module>develop-notes-repostitory</module>
+        <module>develop-notes-cache</module>
     </modules>
 
     <dependencies>
@@ -43,10 +44,15 @@
         </dependency>
 
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version>
-            <scope>runtime</scope>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -87,23 +93,28 @@
 <!--                <scope>import</scope>-->
 <!--            </dependency>-->
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.github.sailboat</groupId>
                 <artifactId>develop-notes-start</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.github.sailboat</groupId>
                 <artifactId>develop-notes-web</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.github.sailboat</groupId>
                 <artifactId>develop-notes-service</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.github.sailboat</groupId>
                 <artifactId>develop-notes-repostitory</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.sailboat</groupId>
+                <artifactId>develop-notes-cache</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
@@ -126,7 +137,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.example.notes.Application</mainClass>
+                    <mainClass>notes.com.github.sailboat.Application</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.notes.demos.web;
+package com.github.sailboat.notes.demos.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

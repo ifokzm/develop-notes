@@ -1,10 +1,10 @@
-package com.example.notes;
+package com.github.sailboat.notes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DevelopNotesApplicationTests {
+class ApplicationTests {
 
     @Test
     void contextLoads() {

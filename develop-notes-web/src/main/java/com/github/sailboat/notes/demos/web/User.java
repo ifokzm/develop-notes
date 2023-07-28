@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.notes.demos.web;
+package com.github.sailboat.notes.demos.web;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>

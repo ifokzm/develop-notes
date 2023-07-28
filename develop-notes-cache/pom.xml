@@ -9,10 +9,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>develop-notes-repostitory</artifactId>
-    <name>develop-notes-repostitory</name>
-    <description>repostitory 模块，存放核心业务逻辑代码</description>
-
+    <artifactId>develop-notes-cache</artifactId>
+    <name>develop-notes-cache</name>
+    <description>cache 模块，存放核心缓存逻辑代码</description>
 
     <dependencies>
 
