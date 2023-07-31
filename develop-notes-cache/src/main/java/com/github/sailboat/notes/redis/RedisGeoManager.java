@@ -1,5 +1,7 @@
 package com.github.sailboat.notes.redis;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.geo.*;
 import org.springframework.data.redis.connection.RedisGeoCommands;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -11,7 +13,6 @@ import java.util.List;
 @Component
 public class RedisGeoManager {
 
-    @Resource
     RedisTemplate redisGeoTemplate;
 
     private static String R_KEY = "outlets";
