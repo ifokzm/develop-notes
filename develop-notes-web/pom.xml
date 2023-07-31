@@ -17,6 +17,11 @@
             <artifactId>develop-notes-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.sailboat</groupId>
+            <artifactId>develop-notes-cache</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 <!--    <build>-->

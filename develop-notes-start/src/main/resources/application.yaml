@@ -28,7 +28,12 @@ spring:
       test-on-borrow: false
       filters: stat,wall
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-
+  redis:
+    database: 0
+    host: 192.168.3.134
+    password:
+    port: 6379
+    ping-connection-interval: 1000
   mybatis-plus:
     global-config:
       db-config:

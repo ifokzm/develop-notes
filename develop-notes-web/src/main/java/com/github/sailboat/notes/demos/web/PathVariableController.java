@@ -16,17 +16,23 @@
 
 package com.github.sailboat.notes.demos.web;
 
+import com.github.sailboat.notes.redis.RedisManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
+
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
 @Controller
 public class PathVariableController {
+
+    @Resource
+    RedisManager redisManager;
 
     // http://127.0.0.1:8080/user/123/roles/222
     @RequestMapping(value = "/user/{userId}/roles/{roleId}", method = RequestMethod.GET)
@@ -40,5 +46,17 @@ public class PathVariableController {
     @ResponseBody
     public String getRegExp(@PathVariable("regexp1") String regexp1) {
         return "URI Part : " + regexp1;
+    }
+
+    @RequestMapping(value = "/redis/{key}", method = RequestMethod.GET)
+    @ResponseBody
+    public String getRedisValue(@PathVariable("key") String key){
+       return redisManager.get(key);
+    }
+
+    @RequestMapping(value = "/redis/{key}/{val}", method = RequestMethod.GET)
+    @ResponseBody
+    public void setRedisValue(@PathVariable("key") String key, @PathVariable("val") String val){
+        redisManager.set(key, val);
     }
 }
