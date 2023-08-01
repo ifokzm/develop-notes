@@ -1,0 +1,14 @@
+mybatis-plus:
+  global-config:
+    db-config:
+      select-strategy: not_empty
+      insert-strategy: not_empty
+      update-strategy: not_empty
+      id-type: AUTO
+    banner: false
+  mapper-locations: classpath:mapper/**/*Mapper*.xml
+  type-aliases-package: com.znlh.zy.asset.warehouse.repository.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

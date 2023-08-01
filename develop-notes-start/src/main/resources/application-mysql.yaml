@@ -1,16 +1,4 @@
 spring:
-  profiles:
-    active: dev
-  application:
-    name: develop-notes
-  jackson:
-    time-zone: GMT+8
-  main:
-    allow-bean-definition-overriding: true
-  #  cloud:
-  #    nacos:
-  #      discovery:
-  #        server-addr: 127.0.0.1:8848
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -39,7 +27,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
       # druid 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
       filters: stat,wall,slf4j
-      # aop-patterns: "com.springboot.template.dao.*"
+      #      aop-patterns: "com.springboot.template.dao.*"
       # 参数可以在 com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties 中找到
       filter:
         wall:
@@ -85,78 +73,3 @@ spring:
         # allow: 127.0.0.1
         # 拒绝访问的地址，deny优先于allow，如果在deny列表中，就算在allow列表中，也会被拒绝
         # deny:
-
-  redis:
-    database: 0
-    host: 192.168.3.134
-    password:
-    port: 6379
-    ping-connection-interval: 1000
-
-# 配置 rocketmq
-rocketmq:
-  # 多个NameServer，host:port;host:port，RocketMQProperties
-  name-server: 192.168.3.128:9876
-  #生产者
-  producer:
-    #生产者组名，规定在一个应用里面必须唯一
-    group: springboot_producer_group
-    #消息发送的超时时间 默认3000ms
-    send-message-timeout: 3000
-    #消息达到4096字节的时候，消息就会被压缩。默认 4096
-    compress-message-body-threshold: 4096
-    #最大的消息限制，默认为128K
-    max-message-size: 4194304
-    #同步消息发送失败重试次数
-    retry-times-when-send-failed: 3
-    #在内部发送失败时是否重试其他代理，这个参数在有多个broker时才生效,默认false
-    retry-next-server: true
-    #异步消息发送失败重试的次数
-    retry-times-when-send-async-failed: 3
-    # access-key
-    #accessKey: xxx
-    # secret-key
-    #secretKey: xxx
-    # 是否启用消息跟踪，默认false
-    enableMsgTrace: false
-    # 消息跟踪主题的名称值。如果不进行配置，可以使用默认的跟踪主题名称
-    customizedTraceTopic: RMQ_SYS_TRACE_TOPIC
-  #消费者
-  consumer:
-    # 配置指定group是否启动监听器 group1.topic1 = false
-    #    listeners:
-    # key：group名称
-    #      rocketmq_source_code_group:
-    # value：{key: topic名称: value: true/false}
-    #      rocketmq_source_code: true
-    # 指定消费组
-    group: springboot_consumer_group
-    # 指定topic，启动时就会注册
-    #topic: springboot_consumer_xxx
-    # 一次拉取消息最大值，注意是拉取消息的最大值而非消费最大值
-    pull-batch-size: 10
-    # 其他配置参考属性类
-
-logging:
-  level:
-    org.springframework: ERROR
-    io.netty: ERROR
-    # 关闭RocketmqClient info日志，不然每隔几秒就会打印broker信息
-    RocketmqClient: ERROR
-
-mybatis-plus:
-  global-config:
-    db-config:
-      select-strategy: not_empty
-      insert-strategy: not_empty
-      update-strategy: not_empty
-      id-type: AUTO
-    banner: false
-  mapper-locations: classpath:mapper/**/*Mapper*.xml
-  type-aliases-package: com.github.sailboat.notes.entity
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-
