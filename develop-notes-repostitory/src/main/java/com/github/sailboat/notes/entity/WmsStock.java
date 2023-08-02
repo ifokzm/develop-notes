@@ -25,7 +25,6 @@ public class WmsStock implements Serializable {
     private static final long serialVersionUID=1L;
 
     @TableField(value = "主键")
-    @TableId(value = "id", type = IdType.ID_WORKER)
     private Long id;
 
     @TableField(value = "维度id")
