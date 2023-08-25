@@ -15,4 +15,8 @@ public class RocketMQManager {
     public void syncSendOrderly(String s, String s1, String s2) {
         mqTemplate.syncSendOrderly(s, s1, s2);
     }
+
+    public final RocketMQTemplate getInstance() {
+        return mqTemplate;
+    }
 }
