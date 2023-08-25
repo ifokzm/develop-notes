@@ -20,7 +20,7 @@
         <module>develop-notes-start</module>
         <module>develop-notes-web</module>
         <module>develop-notes-service</module>
-        <module>develop-notes-repostitory</module>
+        <module>develop-notes-repository</module>
         <module>develop-notes-cache</module>
         <module>develop-notes-message</module>
     </modules>
@@ -111,7 +111,7 @@
             </dependency>
             <dependency>
                 <groupId>com.github.sailboat</groupId>
-                <artifactId>develop-notes-repostitory</artifactId>
+                <artifactId>develop-notes-repository</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
