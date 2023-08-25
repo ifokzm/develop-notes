@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.sailboat</groupId>
-            <artifactId>develop-notes-repostitory</artifactId>
+            <artifactId>develop-notes-repository</artifactId>
         </dependency>
     </dependencies>
 
