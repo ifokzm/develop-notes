@@ -42,3 +42,5 @@ redisTemplate.boundGeoOps("outlets")
             .add(point, "这个位置的名称");
 ```
 批量添加位置信息
+
+
