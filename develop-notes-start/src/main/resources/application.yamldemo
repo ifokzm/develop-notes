@@ -3,15 +3,15 @@ server:
 
 spring:
   application:
-    name: asset-warehouse
+    name: develop-notes
   jackson:
     time-zone: GMT+8
   main:
     allow-bean-definition-overriding: true
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
   datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
