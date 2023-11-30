@@ -13,7 +13,6 @@
     <description>入口模块，引导工程启动以及基础配置</description>
     <properties>
         <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
-        <latest.version>0.2.12</latest.version>
     </properties>
 
     <!--  管理cloud alibaba版本-->
@@ -71,17 +70,9 @@
             <version>3.0.0</version>
         </dependency>
 
-        <!-- nacos -->
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>nacos-discovery-spring-boot-starter</artifactId>
-            <version>${latest.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-config-spring-boot-starter</artifactId>
-            <version>${latest.version}</version>
         </dependency>
 
     </dependencies>

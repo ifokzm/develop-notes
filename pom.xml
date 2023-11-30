@@ -14,6 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <aliyun-spring-boot.version>1.0.0</aliyun-spring-boot.version>
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+        <nacos.latest.version>0.2.12</nacos.latest.version>
     </properties>
 
     <modules>
@@ -30,10 +31,19 @@
         <!--            <groupId>com.alibaba.cloud</groupId>-->
         <!--            <artifactId>aliyun-redis-spring-boot-starter</artifactId>-->
         <!--        </dependency>-->
+        <!--            <dependency>-->
+        <!--                <groupId>com.alibaba.cloud</groupId>-->
+        <!--                <artifactId>aliyun-spring-boot-dependencies</artifactId>-->
+        <!--                <version>${aliyun-spring-boot.version}</version>-->
+        <!--                <type>pom</type>-->
+        <!--                <scope>import</scope>-->
+        <!--            </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
@@ -71,6 +81,8 @@
             <optional>true</optional>
         </dependency>
 
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -94,13 +106,17 @@
                 <scope>import</scope>
             </dependency>
 
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba.cloud</groupId>-->
-<!--                <artifactId>aliyun-spring-boot-dependencies</artifactId>-->
-<!--                <version>${aliyun-spring-boot.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
+            <!-- nacos -->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+                <version>${nacos.latest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos.latest.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.github.sailboat</groupId>

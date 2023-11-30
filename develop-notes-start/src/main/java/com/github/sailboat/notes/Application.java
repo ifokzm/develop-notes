@@ -3,6 +3,7 @@ package com.github.sailboat.notes;
 import com.alibaba.nacos.api.annotation.NacosInjected;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;
+import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +28,7 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @EnableNacosDiscovery
 @EnableNacosConfig
+@NacosPropertySource(dataId = "demo", autoRefreshed = true)
 public class Application {
 
     @Value("${spring.application.name}")

@@ -16,7 +16,9 @@
 
 package com.github.sailboat.notes.demos.web;
 
+import com.github.sailboat.notes.nacos.config.NacosConfigService;
 import com.github.sailboat.notes.redis.RedisManager;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +30,12 @@ import javax.annotation.Resource;
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
+@Slf4j
 @Controller
 public class PathVariableController {
+
+    @Resource
+    NacosConfigService configService;
 
     @Resource
     RedisManager redisManager;
@@ -38,6 +44,7 @@ public class PathVariableController {
     @RequestMapping(value = "/user/{userId}/roles/{roleId}", method = RequestMethod.GET)
     @ResponseBody
     public String getLogin(@PathVariable("userId") String userId, @PathVariable("roleId") String roleId) {
+        log.info("获取nacos配置Key:gushi, V:{}", configService.getParam());
         return "User Id : " + userId + " Role Id : " + roleId;
     }
 
