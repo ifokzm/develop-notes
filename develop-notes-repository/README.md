@@ -95,3 +95,7 @@ Unsatisfied dependency expressed through field 'baseMapper'; nested exception is
 public class ManagesysApplication {
 
 注：网上还有一种写法：就是在mapper接口上添加@Mapper注解，然而这种写法并不能解决扫包不全的问题。用上面的做法，指定扫描路径即可。
+
+
+### ShardingSphere知识点梳理 
+https://baijiahao.baidu.com/s?id=1751996369188686304&wfr=spider&for=pc   

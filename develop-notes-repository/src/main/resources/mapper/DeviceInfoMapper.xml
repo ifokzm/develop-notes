@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.sailboat.notes.repository.master.mapper.DeviceInfoMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.github.sailboat.notes.repository.master.po.DeviceInfoEntity">
+            <id column="id" property="id"/>
+            <result column="code" property="code"/>
+            <result column="identity" property="identity"/>
+            <result column="self_identity" property="selfIdentity"/>
+            <result column="category_code" property="categoryCode"/>
+            <result column="first_category" property="firstCategory"/>
+            <result column="second_category" property="secondCategory"/>
+            <result column="third_category" property="thirdCategory"/>
+            <result column="model_id" property="modelId"/>
+            <result column="model" property="model"/>
+            <result column="brand_id" property="brandId"/>
+            <result column="brand" property="brand"/>
+            <result column="height" property="height"/>
+            <result column="power_type" property="powerType"/>
+            <result column="source" property="source"/>
+            <result column="self_device" property="selfDevice"/>
+            <result column="import_user" property="importUser"/>
+            <result column="import_date" property="importDate"/>
+            <result column="delivery_time" property="deliveryTime"/>
+            <result column="warranty_period" property="warrantyPeriod"/>
+            <result column="warehouse_status" property="warehouseStatus"/>
+            <result column="warehouse_date" property="warehouseDate"/>
+            <result column="warehouse_name" property="warehouseName"/>
+            <result column="warehouse_area" property="warehouseArea"/>
+            <result column="gps_code" property="gpsCode"/>
+            <result column="gps_type" property="gpsType"/>
+            <result column="version" property="version"/>
+            <result column="tenant_id" property="tenantId"/>
+            <result column="category_icon" property="categoryIcon"/>
+            <result column="engine_model" property="engineModel"/>
+            <result column="purchase_price" property="purchasePrice"/>
+            <result column="purchase_delivery_demand_id" property="purchaseDeliveryDemandId"/>
+            <result column="object_id" property="objectId"/>
+            <result column="created_by" property="createdBy"/>
+            <result column="created_at" property="createdAt"/>
+            <result column="updated_by" property="updatedBy"/>
+            <result column="updated_at" property="updatedAt"/>
+            <result column="deleted" property="deleted"/>
+        </resultMap>
+
+        <!-- 通用查询结果列 -->
+        <sql id="Base_Column_List">
+            object_id,
+            created_by,
+            created_at,
+            updated_by,
+            updated_at,
+            deleted,
+            id, code, identity, self_identity, category_code, first_category, second_category, third_category, model_id, model, brand_id, brand, height, power_type, source, self_device, import_user, import_date, delivery_time, warranty_period, warehouse_status, warehouse_date, warehouse_name, warehouse_area, gps_code, gps_type, version, tenant_id, category_icon, engine_model, purchase_price, purchase_delivery_demand_id
+        </sql>
+
+</mapper>

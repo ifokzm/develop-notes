@@ -4,11 +4,14 @@ import com.alibaba.nacos.api.annotation.NacosInjected;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
+import com.github.sailboat.notes.config.MybatisPlusAutoConfiguration;
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -22,13 +25,18 @@ import javax.annotation.PostConstruct;
 
 //@EnableDiscoveryClient
 //@EnableApolloConfig
-@SpringBootApplication
-@MapperScan(value = "com.github.sailboat.notes.mapper")
-@EnableTransactionManagement
-@Slf4j
+
+//@SpringBootApplication
+
+// 多数据源
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.class})
+
+//@MapperScan(value = "com.github.sailboat.notes.repository.stock.order.mapper")
+//@EnableTransactionManagement
 @EnableNacosDiscovery
 @EnableNacosConfig
 @NacosPropertySource(dataId = "demo", autoRefreshed = true)
+@Slf4j
 public class Application {
 
     @Value("${spring.application.name}")

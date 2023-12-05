@@ -9,13 +9,24 @@ spring:
     allow-bean-definition-overriding: true
 
   datasource:
+    # druid 连接池配置 https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.3.169:3306/asset_warehouse?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
-    username: asset_warehouse
-    password: asset_warehouse
-    # 连接池配置 https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.3.169:3306/asset_center?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+#    username: asset_center
+#    password: asset_center
     druid:
+      master:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.3.169:3306/asset_center?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+        username: asset_center
+        password: asset_center
+      slave:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.3.169:3306/delivery?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+        username: delivery
+        password: delivery
+
       initial-size: 10
       min-idle: 10
       max-active: 50
@@ -128,7 +139,7 @@ nacos:
 # 配置 rocketmq
 rocketmq:
   # 多个NameServer，host:port;host:port，RocketMQProperties
-  name-server: 192.168.3.128:9876
+  name-server: 192.168.3.182:9876
   #生产者
   producer:
     #生产者组名，规定在一个应用里面必须唯一
