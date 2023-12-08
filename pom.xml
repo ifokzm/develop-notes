@@ -24,6 +24,7 @@
         <module>develop-notes-repository</module>
         <module>develop-notes-cache</module>
         <module>develop-notes-message</module>
+        <module>develop-notes-common</module>
     </modules>
 
     <dependencies>
