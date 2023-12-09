@@ -20,7 +20,6 @@ public class RSAUtil {
     /**
      * 生成随机密钥对（私钥，公钥）
      * 
-     * @param signAlgorithm SHA256withRSA
      * @return
      * @throws NoSuchAlgorithmException
      */
@@ -37,8 +36,8 @@ public class RSAUtil {
         PrivateKey privateKey = keyPair.getPrivate();
         PublicKey publicKey = keyPair.getPublic();
 
-        log.info("privateKey:{}", Hex.encode(privateKey.getEncoded()));
-        log.info("publicKey:{}", Hex.encode(publicKey.getEncoded()));
+        log.info("privateKey:{}", new String(Hex.encode(privateKey.getEncoded())));
+        log.info("publicKey:{}", new String(Hex.encode(publicKey.getEncoded())));
 
         return keyPair;
     }
@@ -150,17 +149,12 @@ public class RSAUtil {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         KeyPair keyPair = RSAUtil.keyGenerator();
 
-        String privateKeyString = new String(Hex.encode(keyPair.getPrivate().getEncoded()));
-        System.out.println(privateKeyString);
-        String publicKeyString = new String(Hex.encode(keyPair.getPublic().getEncoded()));
-        System.out.println(publicKeyString);
-
         String data = "hello";
-        String sign = RSAUtil.generateSign(privateKeyString, data);
+        String sign = RSAUtil.generateSign(new String(Hex.encode(keyPair.getPrivate().getEncoded())), data);
 
         System.out.println(sign);
 
-        boolean isPass = RSAUtil.verifySign(publicKeyString, data, sign);
+        boolean isPass = RSAUtil.verifySign(new String(Hex.encode(keyPair.getPublic().getEncoded())), data, sign);
         System.out.println(isPass);
     }
 
