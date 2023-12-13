@@ -55,3 +55,5 @@ Pair对象对 与 Triple 三元对象组
 | org.apache.commons.lang3.SystemUtils | 系统工具类 | SystemUtils.getUserHome() = "C:\Users\Think" |
 | org.apache.commons.lang3.time.DateFormatUtils | 日期格式化工具类，将日期转为指定格式的字符串 | DateFormatUtils.format(new Date(),"yyyy-MM-dd HH:mm:dd") = "2019-11-11 11:11:11" | 
 | org.apache.commons.lang3.time.DateUtils | 日期工具类，将指定格式的字符串转为日期	| DateUtils.parseDate("1993-09-08 14:30:08","yyyy-MM-dd HH:mm:dd") |
+
+RSA 加密过程是公钥加密、私钥解密，而数字签名、数字证书都是私钥签名（可以理解为加密），公钥签名验证（可以理解为解密）。公钥和私钥都可以用来加密或解密，只要能保证用 A 加密，就用 B 解密即可，至于 A 是公钥还是私钥，可以根据不同的用途而定。
