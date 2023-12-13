@@ -97,5 +97,71 @@ public class ManagesysApplication {
 注：网上还有一种写法：就是在mapper接口上添加@Mapper注解，然而这种写法并不能解决扫包不全的问题。用上面的做法，指定扫描路径即可。
 
 
-### ShardingSphere知识点梳理 
-https://baijiahao.baidu.com/s?id=1751996369188686304&wfr=spider&for=pc   
+> [ShardingSphere知识点梳理](https://baijiahao.baidu.com/s?id=1751996369188686304&wfr=spider&for=pc) 
+   
+
+-----------------------------------------------------------
+> MySQL 空间查询
+### Point
+字段类型: point
+样例: Point(1 1)
+### MultiPoint
+字段类型: multipoint
+样例: MULTIPOINT (1 1,2 2,3 3)
+里面是多个point
+### LineString
+字段类型: linestring
+样例: LINESTRING(1 1,2 2,3 3)
+### MultiLineString
+字段类型: multilinestring
+样例: MULTILINESTRING ((1 1,2 2,3 3),(2 2,2 3,2 4))
+### Polygon
+字段类型: polygon
+样例:
+单面 POLYGON((1 1,1 2,2 2,2 1,1 1))
+镂空面 POLYGON((1 1,,,),(2 2,,,),(3 3,,,))
+会从第一个面中，去除后面的面
+使用ST_Area方法计算面积时，只会算出几个面的面积，用第一个面减，如果后面的面有超过了第一个面范围的部分，会将超出的数值一并减掉。单纯的面积减面积。
+注意:首末点要相同，用于连接成一个闭合的面
+### MultiPolygon
+字段类型: multipolygon
+样例: MULTIPOLYGON(((1 1,1 2,2 2,2 1,1 1)),((2 2,2 3,3 2,2 2)))
+里面是多个polygon
+
+### [示例]
+```
+CREATE TABLE lines (
+id bigint NOT NULL   COMMENT 'id' ,
+line LINESTRING
+);
+
+INSERT INTO test (id, line)
+VALUES (1, ST_GeomFromText('LINESTRING(32.123 128.334, 2 2, 3 3)'));
+
+update test
+set line = ST_GeomFromText('LINESTRING(32.123 128.334, 2 2, 3 3, 32.0001 128.0001)')
+where id = 1;
+
+SELECT id, ST_AsText(line) AS line_text FROM test;
+
+# ST_Length(line)：计算LineString的长度。
+select id, ST_Length(line) from test;
+
+# ST_StartPoint(line)：返回LineString的起始点。
+select id, ST_StartPoint(line) from test;
+
+# ST_EndPoint(line)：返回LineString的结束点。
+select id, ST_EndPoint(line) from test;
+
+# ST_NumPoints(line)：返回LineString中的点数。
+select id, ST_NumPoints(line) from test;
+
+```
+
+
+[参见](https://www.cnblogs.com/endv/p/16703340.html)
+
+[mysql文档](https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html)
+
+
+https://zhuanlan.zhihu.com/p/539938724?utm_id=0

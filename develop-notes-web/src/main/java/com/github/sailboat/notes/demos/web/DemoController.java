@@ -2,6 +2,8 @@ package com.github.sailboat.notes.demos.web;
 
 import javax.annotation.Resource;
 
+import com.github.sailboat.notes.repository.slave.po.TestEntity;
+import com.github.sailboat.notes.service.slave.TestService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,9 @@ public class DemoController {
     @Resource
     SupplyRelationService supplyRelationService;
 
+    @Resource
+    TestService testService;
+
     @GetMapping("/getDeviceInfo")
     public IPage getDeviceInfo(Page page) {
         // 将vo => po，进行page查询
@@ -34,6 +39,19 @@ public class DemoController {
     public IPage getSupplyRelation(Page page) {
         // 将vo => po，进行page查询
         return supplyRelationService.findPage(page);
+    }
+
+    @GetMapping("/getTestLineString")
+    public TestEntity getTestLineString() {
+        // 将vo => po，进行page查询
+        return testService.find();
+    }
+
+    @GetMapping("/setTestLineString")
+    public String setTestLineString() {
+        // 将vo => po，进行page查询
+         testService.save();
+         return "OK";
     }
 
 }

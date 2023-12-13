@@ -18,12 +18,12 @@ spring:
     druid:
       master:
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://192.168.3.169:3306/asset_center?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+        url: jdbc:mysql://192.168.3.188:3306/asset_center?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
         username: asset_center
         password: asset_center
       slave:
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://192.168.3.169:3306/delivery?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+        url: jdbc:mysql://192.168.3.188:3306/delivery?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
         username: delivery
         password: delivery
 
