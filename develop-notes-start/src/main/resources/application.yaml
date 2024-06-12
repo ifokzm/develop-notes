@@ -175,7 +175,10 @@ spring:
 
 logging:
   level:
-    org.springframework: ERROR
+    org:
+      springframework:
+        boot:
+          autoconfigure: DEBUG
     io.netty: ERROR
     # 关闭RocketmqClient info日志，不然每隔几秒就会打印broker信息
     RocketmqClient: ERROR

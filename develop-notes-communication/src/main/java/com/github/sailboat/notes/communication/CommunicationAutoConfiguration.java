@@ -2,11 +2,11 @@ package com.github.sailboat.notes.communication;
 
 import com.github.sailboat.notes.communication.netty.NettyServer;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 
 /**
  * @author zhumeng
@@ -18,7 +18,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationPropertiesScan
 @ComponentScan
-@ConditionalOnExpression(value = "${communication.switch:false}")
 public class CommunicationAutoConfiguration {
 
     @Bean

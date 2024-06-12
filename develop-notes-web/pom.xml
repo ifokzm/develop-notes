@@ -18,6 +18,11 @@
             <artifactId>develop-notes-service</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.sailboat</groupId>
+            <artifactId>develop-notes-communication</artifactId>
+        </dependency>
+
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
