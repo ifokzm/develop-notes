@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * MySQL 存储空间类型配置
+ */
 public class JstGeomConfiguration {
     private GeometryFactory geometryFactory = new GeometryFactory(new PrecisionModel(), 4326);
 

@@ -165,3 +165,6 @@ select id, ST_NumPoints(line) from test;
 
 
 https://zhuanlan.zhihu.com/p/539938724?utm_id=0
+
+[分库分表很常见，让你一次性学会掌握分库分表
+](https://blog.csdn.net/qq_30713721/article/details/129814907?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170381528516800185812069%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170381528516800185812069&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-129814907-null-null.142^v99^pc_search_result_base9&utm_term=%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8&spm=1018.2226.3001.4187)
