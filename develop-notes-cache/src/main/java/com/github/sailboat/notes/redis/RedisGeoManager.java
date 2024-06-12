@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Component
+//@Component
 public class RedisGeoManager {
 
     RedisTemplate redisGeoTemplate;

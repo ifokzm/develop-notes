@@ -15,10 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * @author zhumeng
  */
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisConfiguration {
-    @Bean
+//    @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);

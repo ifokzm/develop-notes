@@ -34,36 +34,36 @@ import javax.annotation.Resource;
 @Controller
 public class PathVariableController {
 
-    @Resource
-    NacosConfigService configService;
-
-    @Resource
-    RedisManager redisManager;
-
-    // http://127.0.0.1:8080/user/123/roles/222
-    @RequestMapping(value = "/user/{userId}/roles/{roleId}", method = RequestMethod.GET)
-    @ResponseBody
-    public String getLogin(@PathVariable("userId") String userId, @PathVariable("roleId") String roleId) {
-        log.info("获取nacos配置Key:gushi, V:{}", configService.getParam());
-        return "User Id : " + userId + " Role Id : " + roleId;
-    }
-
-    // http://127.0.0.1:8080/javabeat/somewords
-    @RequestMapping(value = "/javabeat/{regexp1:[a-z-]+}", method = RequestMethod.GET)
-    @ResponseBody
-    public String getRegExp(@PathVariable("regexp1") String regexp1) {
-        return "URI Part : " + regexp1;
-    }
-
-    @RequestMapping(value = "/redis/{key}", method = RequestMethod.GET)
-    @ResponseBody
-    public String getRedisValue(@PathVariable("key") String key){
-       return redisManager.get(key);
-    }
-
-    @RequestMapping(value = "/redis/{key}/{val}", method = RequestMethod.GET)
-    @ResponseBody
-    public void setRedisValue(@PathVariable("key") String key, @PathVariable("val") String val){
-        redisManager.set(key, val);
-    }
+//    @Resource
+//    NacosConfigService configService;
+//
+//    @Resource
+//    RedisManager redisManager;
+//
+//    // http://127.0.0.1:8080/user/123/roles/222
+//    @RequestMapping(value = "/user/{userId}/roles/{roleId}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String getLogin(@PathVariable("userId") String userId, @PathVariable("roleId") String roleId) {
+//        log.info("获取nacos配置Key:gushi, V:{}", configService.getParam());
+//        return "User Id : " + userId + " Role Id : " + roleId;
+//    }
+//
+//    // http://127.0.0.1:8080/javabeat/somewords
+//    @RequestMapping(value = "/javabeat/{regexp1:[a-z-]+}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String getRegExp(@PathVariable("regexp1") String regexp1) {
+//        return "URI Part : " + regexp1;
+//    }
+//
+//    @RequestMapping(value = "/redis/{key}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String getRedisValue(@PathVariable("key") String key){
+//       return redisManager.get(key);
+//    }
+//
+//    @RequestMapping(value = "/redis/{key}/{val}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public void setRedisValue(@PathVariable("key") String key, @PathVariable("val") String val){
+//        redisManager.set(key, val);
+//    }
 }

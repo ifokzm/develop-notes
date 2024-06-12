@@ -26,6 +26,7 @@
         <module>develop-notes-message</module>
         <module>develop-notes-common</module>
         <module>develop-notes-elasticsearch</module>
+        <module>develop-notes-communication</module>
     </modules>
 
     <dependencies>

@@ -36,7 +36,7 @@ import javax.annotation.PostConstruct;
 //@EnableTransactionManagement
 @EnableNacosDiscovery
 @EnableNacosConfig
-@NacosPropertySource(dataId = "demo", autoRefreshed = true)
+//@NacosPropertySource(dataId = "demo", autoRefreshed = true)
 @Slf4j
 public class Application {
 
@@ -71,13 +71,13 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @NacosInjected
-    private NamingService namingService;
-
-    @PostConstruct
-    public void registerInstance() throws NacosException {
-        namingService.registerInstance(serviceName, "192.168.35.21", 8080);
-    }
+//    @NacosInjected
+//    private NamingService namingService;
+//
+//    @PostConstruct
+//    public void registerInstance() throws NacosException {
+//        namingService.registerInstance(serviceName, "192.168.35.21", 8080);
+//    }
 
     @Bean
     @ConditionalOnExpression(value = "${xxl.job.executor.switch:false}")

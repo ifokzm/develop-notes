@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
-@Component
+//@Component
 public class RedisManager {
 
     private RedisTemplate<String, String> redisTemplate;

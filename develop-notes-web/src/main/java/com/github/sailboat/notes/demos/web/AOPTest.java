@@ -15,9 +15,9 @@ public class AOPTest {
     // private IUserService userService;
 
     // 默认1s，方便测试查看，写10s
-    @RepeatSubmit(expireTime = 10)
-    @PostMapping("/SysLog")
-    public String saveSysLog(@RequestBody Object userParam) {
-        return "";
-    }
+//    @RepeatSubmit(expireTime = 10)
+//    @PostMapping("/SysLog")
+//    public String saveSysLog(@RequestBody Object userParam) {
+//        return "";
+//    }
 }

@@ -20,38 +20,38 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("demo")
 public class DemoController {
 
-    @Resource
-    DeviceInfoService deviceInfoService;
-
-    @Resource
-    SupplyRelationService supplyRelationService;
-
-    @Resource
-    TestService testService;
-
-    @GetMapping("/getDeviceInfo")
-    public IPage getDeviceInfo(Page page) {
-        // 将vo => po，进行page查询
-        return deviceInfoService.findPage(page);
-    }
-
-    @GetMapping("/getSupplyRelation")
-    public IPage getSupplyRelation(Page page) {
-        // 将vo => po，进行page查询
-        return supplyRelationService.findPage(page);
-    }
-
-    @GetMapping("/getTestLineString")
-    public TestEntity getTestLineString() {
-        // 将vo => po，进行page查询
-        return testService.find();
-    }
-
-    @GetMapping("/setTestLineString")
-    public String setTestLineString() {
-        // 将vo => po，进行page查询
-         testService.save();
-         return "OK";
-    }
+//    @Resource
+//    DeviceInfoService deviceInfoService;
+//
+//    @Resource
+//    SupplyRelationService supplyRelationService;
+//
+//    @Resource
+//    TestService testService;
+//
+//    @GetMapping("/getDeviceInfo")
+//    public IPage getDeviceInfo(Page page) {
+//        // 将vo => po，进行page查询
+//        return deviceInfoService.findPage(page);
+//    }
+//
+//    @GetMapping("/getSupplyRelation")
+//    public IPage getSupplyRelation(Page page) {
+//        // 将vo => po，进行page查询
+//        return supplyRelationService.findPage(page);
+//    }
+//
+//    @GetMapping("/getTestLineString")
+//    public TestEntity getTestLineString() {
+//        // 将vo => po，进行page查询
+//        return testService.find();
+//    }
+//
+//    @GetMapping("/setTestLineString")
+//    public String setTestLineString() {
+//        // 将vo => po，进行page查询
+//         testService.save();
+//         return "OK";
+//    }
 
 }
