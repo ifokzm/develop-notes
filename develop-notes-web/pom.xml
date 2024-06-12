@@ -12,32 +12,20 @@
     <name>develop-notes-web</name>
     <description>web 模块，对应 MVC 的 V 概念，存放视图层的逻辑</description>
     <dependencies>
+
         <dependency>
             <groupId>com.github.sailboat</groupId>
             <artifactId>develop-notes-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.sailboat</groupId>
-            <artifactId>develop-notes-cache</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.sailboat</groupId>
-            <artifactId>develop-notes-message</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
         </dependency>
     </dependencies>
 

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import com.github.sailboat.common.enums.KeyType;
 import com.github.sailboat.common.enums.SignAlgorithm;
-import com.github.sailboat.common.util.Hex;
+import com.github.sailboat.common.utils.Hex;
 
 public class RSAUtil {
 

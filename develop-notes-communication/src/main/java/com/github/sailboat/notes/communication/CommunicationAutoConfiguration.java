@@ -22,11 +22,11 @@ import org.springframework.context.annotation.Configuration;
 public class CommunicationAutoConfiguration {
 
     @Bean
-//    @ConditionalOnExpression("#{'true'.equals(environment['netty.start.switch'])}")
     public void startNetty() {
         new Thread(() -> {
             NettyServer nettyServer = new NettyServer();
             nettyServer.bind(8888);
+            log.info("启动Netty成功，port:8888");
         }).start();
     }
 

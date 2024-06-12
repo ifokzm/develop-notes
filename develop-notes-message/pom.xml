@@ -14,11 +14,11 @@
     <description>message 模块，存放核心业务逻辑代码</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-spring-boot-starter</artifactId>
-            <version>2.2.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.rocketmq</groupId>-->
+<!--            <artifactId>rocketmq-spring-boot-starter</artifactId>-->
+<!--            <version>2.2.1</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>
