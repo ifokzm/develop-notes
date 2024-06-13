@@ -51,7 +51,7 @@ public class NettyServer {
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
                     //绑定I/O事件处理类
                     .childHandler(new TimerServerInitializer());
-            log.info("绑定端口号:" + port + ",等待同步成功");
+            log.info("绑定端口号:" + port + ", 服务启动成功");
             /*
             bind:绑定端口
             sync:同步阻塞方法,等待绑定完成,完成后返回 ChannelFuture ,主要用于通知回调
@@ -65,9 +65,14 @@ public class NettyServer {
         } catch (InterruptedException e) {
             log.error(e.getMessage(), e);
         } finally {
-            log.warn("优雅退出,释放线程池资源");
-            bossGroup.shutdownGracefully();
-            workGroup.shutdownGracefully();
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                log.warn("关闭Netty服务");
+                bossGroup.shutdownGracefully();
+                workGroup.shutdownGracefully();
+            }));
+//            log.warn("优雅退出,释放线程池资源");
+//            bossGroup.shutdownGracefully();
+//            workGroup.shutdownGracefully();
         }
     }
 

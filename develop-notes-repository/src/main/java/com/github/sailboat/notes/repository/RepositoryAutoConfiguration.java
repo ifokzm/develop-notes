@@ -17,7 +17,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationPropertiesScan
 @ComponentScan
-@MapperScan(value = "com.github.sailboat.notes.repository.mapper")
-@ConditionalOnExpression(value = "${repository.switch:true}")
+@MapperScan("com.github.sailboat.notes.repository.mapper.*")
 public class RepositoryAutoConfiguration {
 }
