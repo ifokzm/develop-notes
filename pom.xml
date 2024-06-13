@@ -181,6 +181,39 @@
                 <version>2.9.2</version>
             </dependency>
 
+            <!-- 适用于一般性数学运算 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>3.6.1</version>
+            </dependency>
+            <!-- 在FFT方面更加专业且效率较高 -->
+            <dependency>
+                <groupId>com.github.jtransforms</groupId>
+                <artifactId>jtransforms</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.influxdb/influxdb-client-java -->
+            <dependency>
+                <groupId>com.influxdb</groupId>
+                <artifactId>influxdb-client-java</artifactId>
+                <version>6.7.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>4.10.0</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
