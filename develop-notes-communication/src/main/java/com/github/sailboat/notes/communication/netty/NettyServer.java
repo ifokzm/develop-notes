@@ -65,14 +65,9 @@ public class NettyServer {
         } catch (InterruptedException e) {
             log.error(e.getMessage(), e);
         } finally {
-            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-                log.warn("关闭Netty服务");
-                bossGroup.shutdownGracefully();
-                workGroup.shutdownGracefully();
-            }));
-//            log.warn("优雅退出,释放线程池资源");
-//            bossGroup.shutdownGracefully();
-//            workGroup.shutdownGracefully();
+            log.warn("优雅退出,释放线程池资源");
+            bossGroup.shutdownGracefully();
+            workGroup.shutdownGracefully();
         }
     }
 

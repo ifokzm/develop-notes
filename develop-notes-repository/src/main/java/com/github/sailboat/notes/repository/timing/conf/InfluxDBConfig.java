@@ -4,6 +4,7 @@ package com.github.sailboat.notes.repository.timing.conf;
 import com.influxdb.client.InfluxDBClient;
 import com.influxdb.client.InfluxDBClientFactory;
 import com.influxdb.client.InfluxDBClientOptions;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@Data
 public class InfluxDBConfig {
 
     @Value("${influxdb.url}")
@@ -30,15 +32,5 @@ public class InfluxDBConfig {
     @Value("${influxdb.org}")
     private String org;
 
-    @Bean
-    public InfluxDBClient influxDBClient() {
-        InfluxDBClientOptions options = InfluxDBClientOptions.builder()
-                .url(url)
-                .authenticateToken(token.toCharArray())
-                .org(org)
-                .bucket(bucket)
-                .build();
-        return InfluxDBClientFactory.create(options);
-    }
 
 }

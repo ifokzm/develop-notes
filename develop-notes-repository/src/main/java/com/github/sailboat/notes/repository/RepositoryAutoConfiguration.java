@@ -2,6 +2,7 @@ package com.github.sailboat.notes.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,4 +20,6 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 @MapperScan("com.github.sailboat.notes.repository.mapper.*")
 public class RepositoryAutoConfiguration {
+
+
 }
