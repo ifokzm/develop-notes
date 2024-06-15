@@ -36,7 +36,6 @@ public class CommunicationAutoConfiguration {
         taskExecutor.execute(() -> {
             NettyServer nettyServer = new NettyServer();
             nettyServer.bind(port);
-            log.info("启动Netty成功，port:{}", port);
         });
     }
 

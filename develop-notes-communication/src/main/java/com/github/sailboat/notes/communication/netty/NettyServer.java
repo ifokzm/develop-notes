@@ -51,14 +51,14 @@ public class NettyServer {
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
                     //绑定I/O事件处理类
                     .childHandler(new TimerServerInitializer());
-            log.info("绑定端口号:" + port + ", 服务启动成功");
+            log.info("监听终端通信端口号:{}", port);
             /*
             bind:绑定端口
             sync:同步阻塞方法,等待绑定完成,完成后返回 ChannelFuture ,主要用于通知回调
              */
             ChannelFuture channelFuture = serverBootstrap.bind(port).sync();
-            log.info("等待服务端监听窗口关闭");
             /*
+             *   ("等待服务端监听窗口关闭");
              * closeFuture().sync():为了阻塞,服务端链路关闭后才退出.也是一个同步阻塞方法
              */
             channelFuture.channel().closeFuture().sync();
