@@ -51,12 +51,12 @@ public class ExcelUtil {
     public void exportExcel() {}
 
 
-    public static void main(String[] args) {
-        try {
-            new ExcelUtil().importExcel(new File("D:\\手机型号打标测试.xlsx"));
-        } catch (IOException e) {
-            System.out.println(ExceptionUtils.getMessage(e));
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            new ExcelUtil().importExcel(new File("D:\\手机型号打标测试.xlsx"));
+//        } catch (IOException e) {
+//            System.out.println(ExceptionUtils.getMessage(e));
+//        }
+//    }
 
 }

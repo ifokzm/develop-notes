@@ -22,24 +22,23 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <finalName>develop-notes</finalName>
-<!--        <resources>-->
-<!--            <resource>-->
-<!--                <directory>src/main/java</directory>-->
-<!--                <includes>-->
-<!--                    <include>**/*.*</include>-->
-<!--                </includes>-->
-<!--                <filtering>true</filtering>-->
-<!--            </resource>-->
-<!--            <resource>-->
-<!--                <directory>src/main/resources</directory>-->
-<!--                <includes>-->
-<!--                    <include>**/*</include>-->
-<!--                </includes>-->
-<!--            </resource>-->
-<!--        </resources>-->
+        <!--        <resources>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/java</directory>-->
+        <!--                <includes>-->
+        <!--                    <include>**/*.*</include>-->
+        <!--                </includes>-->
+        <!--                <filtering>true</filtering>-->
+        <!--            </resource>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/resources</directory>-->
+        <!--                <includes>-->
+        <!--                    <include>**/*</include>-->
+        <!--                </includes>-->
+        <!--            </resource>-->
+        <!--        </resources>-->
 
         <plugins>
             <plugin>
@@ -52,17 +51,18 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
-<!--                <configuration>-->
-<!--                    <mainClass>com.github.sailboat.notes.Application</mainClass>-->
-<!--                    <skip>true</skip>-->
-<!--                </configuration>-->
                 <configuration>
-                    <fork>true</fork>
+                    <mainClass>com.github.sailboat.notes.Application</mainClass>
+                    <skip>true</skip>
                 </configuration>
+                <!--                <configuration>-->
+                <!--                    <fork>true</fork>-->
+                <!--                </configuration>-->
                 <executions>
                     <execution>
                         <id>repackage</id>
@@ -72,6 +72,31 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version> <!-- 使用最新的稳定版本 -->
+                <executions>
+                    <execution>
+                        <id>upload-file-via-scp</id>
+                        <phase>package</phase> <!-- 选择合适的构建阶段 -->
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>scp</executable> <!-- 指定执行的命令 -->
+                            <arguments>
+                                <argument>-P</argument> <!-- 端口号，如果有需要 -->
+                                <argument>22</argument>
+                                <argument>${project.basedir}/target/develop-notes.jar</argument> <!-- 本地文件路径 -->
+                                <argument>root@121.199.33.29:/opt/wind/</argument> <!-- 远程路径 -->
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
 </project>

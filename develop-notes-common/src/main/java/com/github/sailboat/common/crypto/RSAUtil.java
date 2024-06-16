@@ -146,16 +146,16 @@ public class RSAUtil {
         return publicKeyObject;
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        KeyPair keyPair = RSAUtil.keyGenerator();
-
-        String data = "hello";
-        String sign = RSAUtil.generateSign(new String(Hex.encode(keyPair.getPrivate().getEncoded())), data);
-
-        System.out.println(sign);
-
-        boolean isPass = RSAUtil.verifySign(new String(Hex.encode(keyPair.getPublic().getEncoded())), data, sign);
-        System.out.println(isPass);
-    }
+//    public static void main(String[] args) throws NoSuchAlgorithmException {
+//        KeyPair keyPair = RSAUtil.keyGenerator();
+//
+//        String data = "hello";
+//        String sign = RSAUtil.generateSign(new String(Hex.encode(keyPair.getPrivate().getEncoded())), data);
+//
+//        System.out.println(sign);
+//
+//        boolean isPass = RSAUtil.verifySign(new String(Hex.encode(keyPair.getPublic().getEncoded())), data, sign);
+//        System.out.println(isPass);
+//    }
 
 }

@@ -77,11 +77,11 @@ public final class RangeUtil {
         return minMatched && maxMatched;
     }
 
-    public static void main(String[] args) {
-        System.out.println(inNumRange(1, "(0, 2]"));
-        System.out.println(inNumRange(1, "(, 2]"));
-        System.out.println(inNumRange(1, "(1, 4]"));
-        System.out.println(inNumRange(1, "(0, ]"));
-    }
+//    public static void main(String[] args) {
+//        System.out.println(inNumRange(1, "(0, 2]"));
+//        System.out.println(inNumRange(1, "(, 2]"));
+//        System.out.println(inNumRange(1, "(1, 4]"));
+//        System.out.println(inNumRange(1, "(0, ]"));
+//    }
 
 }
