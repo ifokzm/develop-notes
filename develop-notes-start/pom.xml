@@ -56,13 +56,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
+<!--                <configuration>-->
+<!--                    <mainClass>com.github.sailboat.notes.Application</mainClass>-->
+<!--                    <skip>true</skip>-->
+<!--                </configuration>-->
                 <configuration>
-                    <mainClass>com.github.sailboat.notes.Application</mainClass>
-                    <skip>true</skip>
+                    <fork>true</fork>
                 </configuration>
-                <!--                <configuration>-->
-                <!--                    <fork>true</fork>-->
-                <!--                </configuration>-->
                 <executions>
                     <execution>
                         <id>repackage</id>
@@ -73,29 +73,29 @@
                 </executions>
             </plugin>
 
-            <plugin>
+            <!--<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version> <!-- 使用最新的稳定版本 -->
+                <version>3.0.0</version> &lt;!&ndash; 使用最新的稳定版本 &ndash;&gt;
                 <executions>
                     <execution>
                         <id>upload-file-via-scp</id>
-                        <phase>package</phase> <!-- 选择合适的构建阶段 -->
+                        <phase>package</phase> &lt;!&ndash; 选择合适的构建阶段 &ndash;&gt;
                         <goals>
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>scp</executable> <!-- 指定执行的命令 -->
+                            <executable>scp</executable> &lt;!&ndash; 指定执行的命令 &ndash;&gt;
                             <arguments>
-                                <argument>-P</argument> <!-- 端口号，如果有需要 -->
+                                <argument>-P</argument> &lt;!&ndash; 端口号，如果有需要 &ndash;&gt;
                                 <argument>22</argument>
-                                <argument>${project.basedir}/target/develop-notes.jar</argument> <!-- 本地文件路径 -->
-                                <argument>root@121.199.33.29:/opt/wind/</argument> <!-- 远程路径 -->
+                                <argument>${project.basedir}/target/develop-notes.jar</argument> &lt;!&ndash; 本地文件路径 &ndash;&gt;
+                                <argument>root@121.199.33.29:/opt/wind/</argument> &lt;!&ndash; 远程路径 &ndash;&gt;
                             </arguments>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
