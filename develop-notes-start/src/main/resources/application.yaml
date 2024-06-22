@@ -4,7 +4,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: prd
   application:
     name: develop-notes
   jackson:
@@ -33,20 +33,17 @@ influxdb:
 #  username: admin
 #  password: 12345678
 
-#  ali cloud
+  #  aliyun
   url: http://localhost:8086/
   token: tjgI5_s6BZBWJO_xA8kWU08zZSJPuqzEGdBaHaurvpwaEi0D6ljA7R9wqQw42mykt3-fuufXxNYL0ApiIyWFzg==
 
   # cloud
-#  url: https://us-east-1-1.aws.cloud2.influxdata.com
-#  token: 'H5mOfvpPLAhVGVQg2sKpmjfKW7Q_6YjDG5ng-239iYgRdPJRNNgc0Ar-YrWpu4cjT_zq4kT7IxRhozPGdl-xQA=='
+  #  url: https://us-east-1-1.aws.cloud2.influxdata.com
+  #  token: 'H5mOfvpPLAhVGVQg2sKpmjfKW7Q_6YjDG5ng-239iYgRdPJRNNgc0Ar-YrWpu4cjT_zq4kT7IxRhozPGdl-xQA=='
   #  export INFLUXDB_TOKEN=O0Q-lqgc-vOnRfLikt_go5pJLPDxsFEeQVsvdVYQW3yg5v51ToTGY-MXFPv99Tj-peEKyJybQbsM-nXr5ievhA==
+
   bucket: wind
-  org: 80_Legends
-  # 1.0
-  #  database: develop-notes
-  #  username: root
-  #  password: root
+  org: Legend_80s
   retention-policy: autogen
   batch-size: 1000
   flush-interval: 1000

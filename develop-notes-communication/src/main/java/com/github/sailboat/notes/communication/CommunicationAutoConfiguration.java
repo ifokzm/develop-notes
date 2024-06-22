@@ -37,6 +37,11 @@ public class CommunicationAutoConfiguration {
             NettyServer nettyServer = new NettyServer();
             nettyServer.bind(port);
         });
+
+        taskExecutor.execute(() -> {
+            NettyServer nettyServer = new NettyServer();
+            nettyServer.bindUDP(19801);
+        });
     }
 
 }

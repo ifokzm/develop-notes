@@ -22,20 +22,20 @@ public class TerminalProtocolHandler extends ChannelInboundHandlerAdapter {
         try {
             // 接收数据
             ByteBuf reportBuf = (ByteBuf) msg;
-            log.info("[TerminalProtocolHandler.channelRead] address:{}, msg:{}", ctx.channel().remoteAddress().toString(), ByteBufUtil.hexDump(reportBuf));
+            log.info("TCP发送方:{}, 消息:{}", ctx.channel().remoteAddress().toString(), ByteBufUtil.hexDump(reportBuf));
 
 
             // 响应数据
-            ByteBuf resBuf = Unpooled.buffer(4);
-            resBuf.writeInt(0x00000000);
-            ChannelFuture future = ctx.writeAndFlush(resBuf);
-            future.addListener(f -> {
-                if (f.isSuccess()) {
-                    log.info("[ChannelFuture.addListener] result:{}", f.isSuccess());
-                } else {
-                    log.info("[ChannelFuture.addListener] result:{}", f.cause().getMessage());
-                }
-            });
+//            ByteBuf resBuf = Unpooled.buffer(4);
+//            resBuf.writeInt(0x00000000);
+//            ChannelFuture future = ctx.writeAndFlush(resBuf);
+//            future.addListener(f -> {
+//                if (f.isSuccess()) {
+//                    log.info("[ChannelFuture.addListener] result:{}", f.isSuccess());
+//                } else {
+//                    log.info("[ChannelFuture.addListener] result:{}", f.cause().getMessage());
+//                }
+//            });
         } finally {
             ReferenceCountUtil.release(msg);
         }
